@@ -66,7 +66,6 @@ DeleteButton.propTypes = {
     info: PropTypes.any,
     setInfo: PropTypes.any,
     setInfoLength: PropTypes.any,
-    form: PropTypes.any
 }
 export { AddButton, DeleteButton, DownloadButton }
 
