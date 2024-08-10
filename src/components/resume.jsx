@@ -3,6 +3,7 @@ import telephone from '../assets/telephone.svg'
 import address from '../assets/address.svg'
 import { Fragment } from 'react'
 import PropTypes from "prop-types";
+//////
 export default function UserCVTemplate({ userBasicInfo, workHistory, educationHistory, skills, certification }) {
     return (
         <section id='resume' className="rounded-sm border bg-white w-[695px]  h-[942px] relative font-[Lato] text-xs pb-4">
@@ -16,6 +17,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                     </p>
                 </div>
             </section>
+            {/* career section */}
             <section id='career-info' className='text-[#706f6f] pl-72 mt-8 pr-4'>
                 {/* work histoy section */}
                 <section id='work-history'>
@@ -120,7 +122,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
     )
 
 }
-
+//////
 UserCVTemplate.propTypes = {
     userBasicInfo: PropTypes.object,
     workHistory: PropTypes.array,

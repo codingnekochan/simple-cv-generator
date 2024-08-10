@@ -2,7 +2,7 @@ import Form from "./form";
 import UserCVTemplate from './resume'
 import { useState } from "react";
 import profilePic from '../assets/profilePic.jpg'
-
+//////
 export function MainContent() {    // parent container for form and resume template
     // basicInfo object holds all basicInfo data
     const [basicInfo, setBasicInfo] = useState({

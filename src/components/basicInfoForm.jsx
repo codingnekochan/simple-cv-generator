@@ -1,7 +1,7 @@
 import upload from '../assets/upload.svg'
 import '../index.css'
 import PropTypes from "prop-types";
-
+//////
 export default function BasicInfoForm({ basicInfo, setBasicInfo }) {
     function handleBasicInfo(e) {
         let elementID = e.currentTarget.id
@@ -60,6 +60,7 @@ export default function BasicInfoForm({ basicInfo, setBasicInfo }) {
         </>
     )
 }
+//////
 BasicInfoForm.propTypes ={
     basicInfo : PropTypes.object,
     setBasicInfo : PropTypes.func

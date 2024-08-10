@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-
+///////
 export default function EducationHistoryForm({educationInfo,educationIndex,setEducationInfo}) {
-
     function handleEducationHistory(e) {
         let elementID = e.currentTarget.id;
         const updatedArray = [...educationInfo]
@@ -9,8 +8,8 @@ export default function EducationHistoryForm({educationInfo,educationIndex,setEd
         setEducationInfo(updatedArray)
     }
     console.log(educationInfo)
-    return <>
-        <form action="#" className='education-form grid grid-cols-2 grid-rows-3 gap-2 mb-4'>
+    return(
+        <form action="#" className='education-form grid grid-cols-2 grid-rows-3 gap-2 my-4 border rounded-md pt-2 pb-3 px-3'>
             <div className="flex flex-col">
                 <label htmlFor="degree">Degree</label>
                 <input type="text" id='degree' className='border placeholder:text-xs pl-1 outline-none focus-visible:border-gray-700' placeholder='Bachelor of Science' value={educationInfo[educationIndex].degree} onChange={handleEducationHistory} />
@@ -32,8 +31,9 @@ export default function EducationHistoryForm({educationInfo,educationIndex,setEd
                 <input type="date" id="end" className='border placeholder:text-xs pl-1 outline-none focus-visible:border-gray-700' value={educationInfo[educationIndex].end} onChange={handleEducationHistory} />
             </div>
         </form>
-    </>
+    )
 }
+//////
 EducationHistoryForm.propTypes = {
     educationInfo: PropTypes.any,
     educationIndex: PropTypes.number,

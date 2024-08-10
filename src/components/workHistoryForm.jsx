@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+///////
 export default function WorkHistoryForm({ workInfo, workIndex, setWorkInfo }) {
     function handleWorkHistory(e) {
         let elementID = e.currentTarget.id;
@@ -18,8 +18,8 @@ export default function WorkHistoryForm({ workInfo, workIndex, setWorkInfo }) {
         setWorkInfo(updatedArray)
     }
     console.log(workInfo)
-    return <>
-        <div className="mb-4">
+    return  ( 
+    <div className="my-4 border rounded-md pt-2 pb-3 px-3">
             <form id={workIndex} action="#" className='work-experience-form grid grid-cols-2 grid-row-4 gap-2'>
                 <div className="flex flex-col col-span-1 row-span-1">
                     <label htmlFor="jobTitle">Job Title</label>
@@ -48,14 +48,12 @@ export default function WorkHistoryForm({ workInfo, workIndex, setWorkInfo }) {
                             <li><input type="text" id='4' className='responsibilities border placeholder:text-xs pl-1 outline-none focus-visible:border-gray-700' onChange={handleWorkHistory} /></li>
                         </ol>
                     </fieldset>
-
                 </div>
             </form>
         </div>
-    </>
-
+    )
 }
-
+//////
 WorkHistoryForm.propTypes = {
     workInfo: PropTypes.any,
     workIndex: PropTypes.number,
