@@ -12,7 +12,5 @@ export default function AccordionComponent({ children, heading, id }){
 AccordionComponent.propTypes = {
     children: PropTypes.node.isRequired,
     heading: PropTypes.string.isRequired,
-    // isOpen:PropTypes.string.isRequired,
-    // handleOpen:PropTypes.string.isRequired,
-
+    id:PropTypes.string.isRequired
 };

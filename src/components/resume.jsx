@@ -5,7 +5,7 @@ import { Fragment } from 'react'
 import PropTypes from "prop-types";
 export default function UserCVTemplate({ userBasicInfo, workHistory, educationHistory , skills, certification}) {
     return (
-        <section className="rounded-sm shadow-[2px_-2px_12px_0px_rgba(225,225,225,1)] w-[650px]  h-[950px] relative font-[Lato] text-xs pb-4">
+        <section id='resume' className="rounded-sm border bg-white w-[695px]  h-[942px] relative font-[Lato] text-xs pb-4">
             <section id='basic-info' className=' mt-8 flex justify-end bg-[#f4f4f4] h-[190px]'>
                 <div className='w-[60%] p-8'>
                     <h2 id='role' className="font-[Raleway] text-base uppercase text-[#464a4e]">{userBasicInfo.occupation}</h2>
@@ -30,7 +30,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                                 <p className='employment-duration text-[#464a4e] font-bold'>
                                     {`${work.startDate} - ${work.endDate}`}
                                 </p>
-                                <ul className='acievement list-disc list-inside leading-normal'>
+                                <ul className='acievement list-disc list-outside leading-normal ml-3'>
                                     {work.responsibilities.map((responsibility, index) => {
                                 if(responsibility !== ''){
                                     return <li key={index}>{responsibility}</li>
@@ -65,7 +65,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                     </div>
                 </section>
             </section>
-            <section id='extra-info' className='w-[210px] h-full bg-[#d9e6ec] absolute top-0 left-8 flex flex-col gap-12  text-[#625f5f]'>
+            <section id='extra-info' className='w-[220px] h-full bg-[#d9e6ec] absolute top-0 left-8 flex flex-col gap-12  text-[#625f5f]'>
                 <div id="profile-pic" className=' self-center rounded-full border-8 border-[#a7c9d8] w-[150px] h-[150px] mt-14'>
                     <img id='profile-pic' src={userBasicInfo.profilepic} className='w-full h-full object-cover rounded-full' />
                 </div>
@@ -79,9 +79,9 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                         <img src={telephone} alt="phone number" />
                         <p>{userBasicInfo.telephone}</p>
                     </div>
-                    <div id='address' className='flex  gap-3 items-center contact-detail px-2'>
+                    <div id='address' className='flex gap-3 items-center contact-detail px-2'>
                         <img src={address} alt="address" />
-                        <p>{userBasicInfo.address}</p>
+                        <p className='capitalize'>{userBasicInfo.address}</p>
                     </div>
                 </section>
                 <section id="skill-info" className='pl-4'>
