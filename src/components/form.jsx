@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 export default function Form(
     {
         basicInfo,
-        handleBasicInfo,
+        setBasicInfo,
         workInfo,
         setWorkInfo,
         workForm,
@@ -38,14 +38,14 @@ export default function Form(
         <section className="border rounded-lg w-[40%] h-full p-8 shadow-lg text-base text-[Raleway]  text-[#141517] bg-white">
             <AccordionComponent id='basic-info' heading='BASIC INFORMATION'>
                 <BasicInfoForm
-                    newValue={basicInfo}
-                    handleChange={handleBasicInfo}
+                    basicInfo={basicInfo}
+                    setBasicInfo = {setBasicInfo}
                 />
             </AccordionComponent>
             <AccordionComponent id='work-history' heading='WORK HISTORY'>
                 {
                     Array.from({ length: workLength }).map((_, index) => {
-                        return <Fragment key={index}>
+                        return <Fragment key={'w'+index + Math.random()*1}>
                             <WorkHistoryForm workIndex={index} workInfo={workInfo} setWorkInfo={setWorkInfo} />
                         </Fragment>
                     })
@@ -67,7 +67,7 @@ export default function Form(
             <AccordionComponent id='education' heading='EDUCATION'>
                 {
                     Array.from({ length: educationLength }).map((_, index) => {
-                        return <Fragment key={index + 1}>
+                        return <Fragment key={'e' + index + Math.random()*1}>
                             <EducationHistoryForm educationIndex={index} educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
                         </Fragment>
                     })
@@ -80,7 +80,7 @@ export default function Form(
                     form={educationForm}
                 />
                 <DeleteButton
-                buttonName='Delete Education'
+                    buttonName='Delete Education'
                     info={educationInfo}
                     setInfo={setEducationInfo}
                     setInfoLength={setEducationLength}
@@ -90,7 +90,7 @@ export default function Form(
                 <SkillsForm >
                     {
                         Array.from({ length: skillsLength }).map((_, index) => {
-                            return <li key={index + 1}>
+                            return <li key={'s' + index + Math.random()*1}>
                                 <Skills skillInfo={skillInfo} skillLength={skillsLength} setSkillInfo={setSkillInfo} skillIndex={index} />
                             </li>
                         })
@@ -114,7 +114,7 @@ export default function Form(
                 <CertificationsForm>
                     {
                         Array.from({ length: certsLength }).map((_, index) => {
-                            return <li key={index + 1}>
+                            return <li key={'c' + index + Math.random()*1}>
                                 <Certificate certsInfo={certsInfo} certsLength={certsLength} setCertsInfo={setCertsInfo} certIndex={index} />
                             </li>
                         })
@@ -140,7 +140,7 @@ export default function Form(
 }
 Form.propTypes = {
     basicInfo: PropTypes.object,
-    handleBasicInfo: PropTypes.func,
+    setBasicInfo: PropTypes.func,
     workInfo: PropTypes.array,
     setWorkInfo: PropTypes.func,
     workForm: PropTypes.object,

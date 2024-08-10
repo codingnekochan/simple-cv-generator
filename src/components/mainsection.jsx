@@ -3,7 +3,8 @@ import UserCVTemplate from './resume'
 import { useState } from "react";
 import profilePic from '../assets/profilePic.jpg'
 
-export function MainContent() {
+export function MainContent() {    // parent container for form and resume template
+    // basicInfo object holds all basicInfo data
     const [basicInfo, setBasicInfo] = useState({
         profilepic: profilePic,
         firstname: '',
@@ -14,21 +15,7 @@ export function MainContent() {
         occupation: '',
         about: '',
     })
-    function handleBasicInfo(e) {
-        let elementID = e.currentTarget.id
-        if (elementID === 'profilepic') {
-            let file = URL.createObjectURL(e.target.files[0])
-            setBasicInfo(() => ({ ...basicInfo, [elementID]: file }))
-        }
-        else {
-            setBasicInfo(() => ({
-                ...basicInfo,
-                [elementID]: e.target.value
-            })
-            );
-        }
-    }
-
+    // workForm holds work history data
     const workForm = {
         jobTitle: '',
         employer: '',
@@ -36,6 +23,7 @@ export function MainContent() {
         endDate: 'Present',
         responsibilities: []
     }
+    // educationForm holds education history data
     const educationForm = {
         degree: '',
         course: '',
@@ -44,15 +32,17 @@ export function MainContent() {
         end: 'Present',
 
     }
+    // all states for different form sections
     const [workInfo, setWorkInfo] = useState([workForm])
     const [educationInfo, setEducationInfo] = useState([educationForm])
-    const [skillInfo, setSkillInfo] = useState(['', '', ''])
-    const [certsInfo, setCertsInfo] = useState(['', '', ''])
+    const [skillInfo, setSkillInfo] = useState(['', '', '']) // hold skills list in an array
+    const [certsInfo, setCertsInfo] = useState(['', '', ''])  //hold certifications/awards in an array
     return (
         <main className="main-page flex justify-between px-6 pb-6">
             <Form
+            //form props
                 basicInfo={basicInfo}
-                handleBasicInfo={handleBasicInfo}
+                setBasicInfo={setBasicInfo}
                 workForm={workForm}
                 workInfo={workInfo}
                 setWorkInfo={setWorkInfo}
@@ -64,7 +54,14 @@ export function MainContent() {
                 certsInfo={certsInfo}
                 setCertsInfo={setCertsInfo}
             />
-            <UserCVTemplate userBasicInfo={basicInfo} workHistory={workInfo} educationHistory={educationInfo} skills={skillInfo} certification={certsInfo} />
+            <UserCVTemplate
+            // resume props
+                userBasicInfo={basicInfo}
+                workHistory={workInfo}
+                educationHistory={educationInfo}
+                skills={skillInfo}
+                certification={certsInfo}
+            />
         </main>
     )
 }

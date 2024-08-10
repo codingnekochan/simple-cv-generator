@@ -23,6 +23,7 @@ export function Certificate({certsInfo,setCertsInfo,certIndex}){
     setCertsInfo(updatedArray)
     }
     console.log(certsInfo)
+    
     return <input type='text' id={certIndex} className='certification border placeholder:text-xs pl-1 outline-none focus-visible:border-gray-700' placeholder='best in dream 2023' value={certsInfo[certIndex]} onChange ={handleCertification} />
 }
 
