@@ -43,7 +43,7 @@ export default function Form(
             <AccordionComponent id='work-history' heading='WORK HISTORY'>
                 {
                     Array.from({ length: workLength }).map((_, index) => {
-                        return <Fragment key={'w' + index + Math.random() * 1}>
+                        return <Fragment key={`w${index}`}>
                             <WorkHistoryForm workIndex={index} workInfo={workInfo} setWorkInfo={setWorkInfo} />
                         </Fragment>
                     })
@@ -67,7 +67,7 @@ export default function Form(
             <AccordionComponent id='education' heading='EDUCATION'>
                 {
                     Array.from({ length: educationLength }).map((_, index) => {
-                        return <Fragment key={'e' + index + Math.random() * 1}>
+                        return <Fragment key={`e${index}`}>
                             <EducationHistoryForm educationIndex={index} educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
                         </Fragment>
                     })
@@ -92,7 +92,7 @@ export default function Form(
                 <SkillsForm >
                     {
                         Array.from({ length: skillsLength }).map((_, index) => {
-                            return <li key={'s' + index + Math.random() * 1}>
+                            return <li key={`s${index}`}>
                                 <Skills skillInfo={skillInfo} skillLength={skillsLength} setSkillInfo={setSkillInfo} skillIndex={index} />
                             </li>
                         })
@@ -118,7 +118,7 @@ export default function Form(
                 <CertificationsForm>
                     {
                         Array.from({ length: certsLength }).map((_, index) => {
-                            return <li key={'c' + index + Math.random() * 1}>
+                            return <li key={`c${index}`}>
                                 <Certificate certsInfo={certsInfo} certsLength={certsLength} setCertsInfo={setCertsInfo} certIndex={index} />
                             </li>
                         })
