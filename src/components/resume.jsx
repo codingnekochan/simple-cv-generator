@@ -97,7 +97,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                         {
                             skills.map((skill, index) => {
                                 if (skill !== '') {
-                                    return <li key={Math.random() * index}>{skill}</li>
+                                    return <li key={`skill-${index}`}>{skill}</li>
                                 }
                             })
                         }
@@ -111,7 +111,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                         {
                             certification.map((certificate, index) => {
                                 if (certificate !== '') {
-                                    return <li key={Math.random() * index}>{certificate}</li>
+                                    return <li key={`cert-${index}`}>{certificate}</li>
                                 }
                             })
                         }
