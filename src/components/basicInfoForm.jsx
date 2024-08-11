@@ -23,7 +23,7 @@ export default function BasicInfoForm({ basicInfo, setBasicInfo }) {
                 <div className="border rounded-lg col-span-1 row-span-3 h-[100px] w-[120px] gap-1 self-center">
                     <label htmlFor='profilepic' className="cursor-pointer px-2 py-1 flex flex-col items-center justify-center " tabIndex={0}>
                         <img src={upload} alt="upload icon" className='w-[50px]' />
-                        Upload Photo
+                        <span>Upload Photo</span>
                         <input type="file" id='profilepic' name='profilePicture' className="visually-hidden" accept="image/*" onChange={handleBasicInfo} />
                     </label>
                 </div>

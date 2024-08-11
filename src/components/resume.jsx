@@ -58,7 +58,7 @@ export default function UserCVTemplate({ userBasicInfo, workHistory, educationHi
                                 </p>
                                 <p className="Degree">
                                     <span className="degree capitalize">{education.degree} </span>
-                                    in
+                                    <span>in</span>
                                     <span className="course capitalize"> {education.course}</span>
                                 </p>
                                 <p className="university ncapitalize font-bold text-[#464a4e] ">
