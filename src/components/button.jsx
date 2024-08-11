@@ -34,7 +34,6 @@ function DeleteButton({ buttonName, info, setInfo, setInfoLength }) {
 function DownloadButton() {
     function handleDownload() {
         html2canvas(document.querySelector('#resume')).then(function (canvas) {
-            document.body.appendChild(canvas)
             const baseURLImage = canvas.toDataURL('image/png')
             console.log(baseURLImage)
             const resumePDF = new jsPDF({
