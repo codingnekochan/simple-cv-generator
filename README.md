@@ -1,8 +1,24 @@
-# React + Vite
+# Simple CV Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple CV generator built with React, Tailwind CSS, html2canvas, and jsPDF. It allows users to input their details, generate a CV preview, and download the CV as a PDF.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Demo
+You can view a live demo of the project [https://simple-cv-generator-kappa.vercel.app/
+](#).
+
+## Features
+- User-friendly form to input CV details.
+- Generate and download CV as a PDF.
+
+## Technologies Used
+- **React** - JavaScript library for building user interfaces.
+- **Tailwind CSS** - Utility-first CSS framework for styling.
+- **html2canvas** - Capture screenshots of the CV
+- **jsPDF** - Generate PDF files from the captured screenshots.
+
